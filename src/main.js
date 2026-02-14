@@ -30,18 +30,11 @@ function onFormSubmit(event) {
   // Get search query from input and trim whitespace
   const query = searchInput.value.trim();
 
-  // Check if search query is empty
+  // Check if search query is empty (required by assignment)
   if (query === '') {
-    iziToast.show({
-      title: 'Warning',
+    iziToast.warning({
       message: 'Please enter a search query!',
       position: 'topRight',
-      backgroundColor: '#ffc107',
-      titleColor: '#000',
-      messageColor: '#000',
-      iconColor: '#000',
-      theme: 'light',
-      icon: 'ico-warning',
     });
     return;
   }
@@ -61,15 +54,9 @@ function onFormSubmit(event) {
       // Check if API returned any results
       if (data.hits.length === 0) {
         iziToast.error({
-          title: 'Error',
           message:
             'Sorry, there are no images matching your search query. Please try again!',
           position: 'topRight',
-          backgroundColor: '#ef4040',
-          titleColor: '#fafafb',
-          messageColor: '#fafafb',
-          iconColor: '#fafafb',
-          progressBarColor: '#ffbebe',
         });
         return;
       }
@@ -86,14 +73,8 @@ function onFormSubmit(event) {
 
       // Show error notification
       iziToast.error({
-        title: 'Error',
         message: 'Something went wrong. Please try again later!',
         position: 'topRight',
-        backgroundColor: '#ef4040',
-        titleColor: '#fafafb',
-        messageColor: '#fafafb',
-        iconColor: '#fafafb',
-        progressBarColor: '#ffbebe',
       });
 
       // Log error to console for debugging
