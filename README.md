@@ -1,14 +1,17 @@
 # Image Search App
 
-Simple web app to search and view images using Pixabay API.
+Extended web app to search and view images using Pixabay API, now featuring pagination and smooth scrolling.
 
 ## What I Built
 
 - Search form with input validation
 - Image gallery with 3 columns
 - Click image to see full size
-- Loading spinner during search
+- Loading spinner during search and fetching more results
 - Error messages for empty results
+- **New:** "Load more" button for pagination (15 images per page)
+- **New:** Smooth scrolling after loading new images
+- **New:** End-of-collection notifications
 
 ## Technologies
 
@@ -20,15 +23,12 @@ Simple web app to search and view images using Pixabay API.
 
 ## How to Run
 
-```bash
 npm install
 npm run dev
-```
 
 ## API Setup
 
-Get your free API key at [Pixabay](https://pixabay.com/api/docs/) and add it to
-`js/pixabay-api.js`
+Get your free API key at [Pixabay](https://pixabay.com/api/docs/) and add it to `js/pixabay-api.js`
 
 ## Files
 
@@ -40,15 +40,16 @@ Get your free API key at [Pixabay](https://pixabay.com/api/docs/) and add it to
 ## What I Learned
 
 - Working with REST APIs
-- Promises with `.then()` and `.catch()`
+- Refactoring Promises to modern `async/await` syntax
+- Implementing pagination with API parameters (`page`, `per_page`)
+- Calculating DOM element heights (`getBoundingClientRect`) for smooth scrolling (`window.scrollBy`)
 - Modular JavaScript
-- Handling async operations
-- Form validation
+- Handling async operations and error catching
 
 ## Demo
 
-[View Live](https://idziamko.github.io/goit-js-hw-11/)
+[View Live](https://idziamko.github.io/goit-js-hw-12/)
 
 ---
 
-**Assignment:** GoIT Full Stack Developer Course - Homework #11
+**Assignment:** GoIT Full Stack Developer Course - Homework #12
